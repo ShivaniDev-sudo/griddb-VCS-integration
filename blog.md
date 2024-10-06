@@ -163,6 +163,15 @@ Here's an example of how to configure the dependency in the`pom.xml` file:
 </project>
 ```
 
+**Generate GitHub API Access Token**
+
+To access GitHub data such as commits and pull requests, you'll need a **GitHub Personal Access Token**. Follow the instructions in the official GitHub documentation to create one:
+
+1. Log in to GitHub.
+2. Navigate to the [**GitHub Personal Access Token Documentation**](https://docs.github.com/en/enterprise-server@3.3/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+3. Follow the steps to generate a token with the necessary scopes (`repo`, `user`).
+
+
 **Configure GridDB Connection**
 
 After adding the GridDB dependency, the next step is configuring the connection details for our GridDB cluster in our Spring Boot application. This is usually configured in the `application.properties` file, where you can specify various settings for the application.
@@ -187,8 +196,8 @@ github.api.base-url=https://api.github.com
 - `griddb.cluster.port`: The port number on which the GridDB cluster is listening.
 - `griddb.cluster.user`: The username for accessing the GridDB cluster.
 - `griddb.cluster.password`: The password for the specified GridDB user (replace with ouractual password).
-- `server.port=9090`: Sets the port on which ourSpring Boot application will run.\
-- `github.api.token`: The authentication token for accessing the GitHub API. 
+- `server.port=9090`: Sets the port on which ourSpring Boot application will run.
+- `github.api.token`: The personal access token for authenticating with the GitHub API, as generated
 - `github.api.base-url`: The base URL for making requests to the GitHub API (e.g., `https://api.github.com`).
 
 **Create GridDB Client Bean**
